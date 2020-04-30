@@ -1,0 +1,11 @@
+{
+    "name": "portfolio",
+    "description": "Personal developer portfolio",
+    "author": "Lane",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "scripts": {
+        "start": "node ./server.js"
+    }
+}
