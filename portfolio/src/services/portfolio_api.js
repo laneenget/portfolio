@@ -19,10 +19,4 @@ export default {
             return response.data
         })
     },
-
-    deleteMessage(id) {
-        return axios.delete('/api/messages/' + id).then(response => {
-            return response.data
-        })
-    },
 }
