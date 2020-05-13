@@ -4,7 +4,7 @@
       <NavBar></NavBar>
       <Home></Home>
       <About></About>
-      <Contact v-bind:message="message" v-bind:name="name"></Contact>
+      <Contact></Contact>
 
   </div>
 </template>
@@ -31,9 +31,7 @@ export default {
     Contact
   },
   methods: {
-    newMessage(message) {
-      this.$portfolio_api.addMessage(message)
-    }
+    
   }
 }
 </script>

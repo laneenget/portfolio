@@ -2,9 +2,9 @@
     <div>
         <nav class="links">
             <ul class="nav-links">
-                <li class="link" id="home-link"><a class="active" href="#home">HOME</a></li>
-                <li class="link" id="about-link"><a href="#about">ABOUT ME</a></li>
-                <li class="link" id="contact-link"><a href="#contact">CONTACT</a></li>
+                <li class="link" id="home-link" v-on:click="goHome">HOME</li>
+                <li class="link" id="about-link" v-on:click="goAbout">ABOUT ME</li>
+                <li class="link" id="contact-link" v-on:click="goContact">CONTACT</li>
             </ul>
         </nav>
     </div>
@@ -12,7 +12,17 @@
 
 <script>
 export default {
-    
+    methods: {
+        goHome(){
+            this.$router.push('Home')
+        },
+        goAbout(){
+            this.$router.push('About')
+        },
+        goContact(){
+            this.$router.push('Contact')
+        }
+    }
 }
 </script>
 

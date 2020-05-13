@@ -19,7 +19,7 @@
                 <br><textarea id="note" class="form-control" v-model.trim="message"></textarea>
             </div>
 
-            <a class="button" id="submit" v-on:click.prevent="addMessage">Submit</a>
+            <a class="button" id="submit" v-on:click="addMessage">Submit</a>
         </form>
     </div>
 </template>
@@ -32,7 +32,6 @@ export default {
             name: '',
             email: '',
             note: '',
-            message: '',
             errors: []
         }
     },

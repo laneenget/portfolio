@@ -7,13 +7,13 @@ module.exports = (sequelize, DataTypes) => {
         }, email: {
             type: DataTypes.STRING,
             allowNull: false
-        }, message: {
+        }, note: {
             type: DataTypes.STRING,
             allowNull: false
         }
     })
 
-    Message.syng({force: false}).then( () =>{
+    Message.sync({force: false}).then( () =>{
         console.log('synced message table')
     })
 
