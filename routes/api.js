@@ -3,12 +3,28 @@ let express = require('express')
 let Sequelize = require('sequelize')
 let db = require('../models')
 let Message = db.Message
-let api_key = '38260c09b16ddee583ab0f9006640faa-3e51f8d2-3bfa9d56';
-let domain = 'sandboxcb6d364f0c354194ad7fd7956f40b11e.mailgun.org';
-let Mailgun = require('mailgun-js')
+let formidable = require('formidable')
 
 let router = express.Router()
-let mailgun = Mailgun({apiKey: api_key, domain: domain})
 
+
+
+router.post('/messages', function(req, res, next){
+    Message.create(req.body).then( (data) => {
+        let form = new formidable.IncomingForm()
+        form.parse(req, function(err, fields, files){
+        console.log(fields.to)
+        console.log(fields.from)
+        console.log(fields.subject)
+        res.writeHead(200, {'content-type': 'text/plain'})
+        return res.end('Message Received, Thanks!\r\n')})
+    }).catch( err => {
+        if (err instanceof Sequelize.ValidationError) {
+            let warnings = err.errors.map( e => e.warning )
+            return res.status(400).json(warnings)
+        }
+        return next(err)
+    })
+})
 
 module.exports = router
