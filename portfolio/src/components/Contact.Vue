@@ -38,7 +38,7 @@ export default {
         addMessage() {
             if (this.name && this.email && this.note) {
                 let message = { name: this.name, email: this.email, note: this.note}
-                message.save()
+                
             } else {
                 this.errors.push('Name, email, and message are required.')
             }
