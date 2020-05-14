@@ -2,9 +2,9 @@
     <div>
         <nav class="links">
             <ul class="nav-links">
-                <li class="link" id="home-link" v-on:click="goHome">HOME</li>
-                <li class="link" id="about-link" v-on:click="goAbout">ABOUT ME</li>
-                <li class="link" id="contact-link" v-on:click="goContact">CONTACT</li>
+                <li class="link" id="home-link"><router-link to="/home">HOME</router-link></li>
+                <li class="link" id="about-link"><router-link to="/about">ABOUT ME</router-link></li>
+                <li class="link" id="contact-link"><router-link to="/contact">CONTACT</router-link></li>
             </ul>
         </nav>
     </div>
@@ -12,17 +12,7 @@
 
 <script>
 export default {
-    methods: {
-        goHome(){
-            this.$router.push('Home')
-        },
-        goAbout(){
-            this.$router.push('About')
-        },
-        goContact(){
-            this.$router.push('Contact')
-        }
-    }
+    name: 'NavBar',
 }
 </script>
 
@@ -61,4 +51,10 @@ nav {
     background-color: #091B25;
     color: #537687;
 }
+
+.router-link-active{
+    background-color: #091B25;
+    color: #537687;
+}
+
 </style>

@@ -1,24 +1,29 @@
 <template>
-    <div class="home-flex">
-        <h1 class="home-header" id="name">Lane Enget</h1>
-        <h2 class="home-header" id="description">I am a software developer
-                focused on crafting user-friendly experiences.
-        </h2>
-        <a class="button check-work" href="#about">Check my work</a>
+    <div class="home">
+        <div class="home-flex">
+            <h1 class="home-header" id="name">Lane Enget</h1>
+            <h2 class="home-header" id="description">I am a software developer
+                    focused on crafting user-friendly experiences.
+            </h2>
+            <router-link class="button check-work" to="/about">Check my work</router-link>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    
+    name: 'Home'
 }
 </script>
 
 <style>
-.home-flex {
+.home {
     background-image: url("../assets/fog.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+.home-flex {
     align-items: center;
     display: flex;
     flex-direction: column;

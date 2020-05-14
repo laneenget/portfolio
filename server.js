@@ -3,7 +3,7 @@ let bodyParser = require('body-parser')
 let api_routes = require('./routes/api.js')
 let path = require('path')
 
-let app = module.exports = express()
+let app = express()
 
 app.use(express.static(path.join(__dirname, 'portfolio', 'dist')))
 

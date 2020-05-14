@@ -2,9 +2,9 @@
   <div id="app">
 
       <NavBar></NavBar>
-      <Home></Home>
-      <About></About>
-      <Contact></Contact>
+      <transition name="moveInUp">
+         <router-view></router-view>
+      </transition>
 
   </div>
 </template>
@@ -44,5 +44,19 @@ body {
     margin: 0px 0px 0px 0px;
 }
 
+.moveInUp-enter-active{
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 
 </style>
