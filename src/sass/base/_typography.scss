@@ -5,6 +5,7 @@ h1 {
 }
 
 p,
+li,
 a {
   font-family: "Montserrat", sans-serif;
   font-size: $default-font-size;
@@ -39,6 +40,8 @@ a:hover {
 }
 
 .text-color-main {
+  z-index: 1;
+
   @include supportColorForIE11();
 
   // Responsive text purple style
